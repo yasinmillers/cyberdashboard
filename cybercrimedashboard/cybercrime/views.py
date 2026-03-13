@@ -17,6 +17,11 @@ def BASE(request):
 def LOGIN(request):
     return render(request,'login.html')
 
+
+def ADMINLOGIN(request):
+    # render separate admin login page; the authentication logic is shared
+    return render(request, 'adminlogin.html')
+
 def notifications(request):
     complaints1 = Complaints.objects.all()
     newcom_count1 = Complaints.objects.filter(status='0').count() 
